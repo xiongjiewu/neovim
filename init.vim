@@ -62,8 +62,8 @@ func! ExpandTab(len)
 	execute 'setlocal softtabstop='.a:len
 	execute 'setlocal tabstop='.a:len
 endfunc
-autocmd FileType html,css,scss,javascript call ExpandTab(2)
-autocmd FileType php,python,json,nginx call ExpandTab(4)
+autocmd FileType html,scss call ExpandTab(2)
+autocmd FileType php,python,json,nginx,css,javascript call ExpandTab(4)
 " 花括号之后回车光标自动缩进
 inoremap {<CR> {<CR>}<ESC>O
 
