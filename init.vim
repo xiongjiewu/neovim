@@ -66,6 +66,8 @@ autocmd FileType html,scss call ExpandTab(2)
 autocmd FileType php,python,json,nginx,css,javascript call ExpandTab(4)
 " 花括号之后回车光标自动缩进
 inoremap {<CR> {<CR>}<ESC>O
+" 中之后回车光标自动缩进
+inoremap [<CR> [<CR>]<ESC>O
 
 autocmd FileType vim setlocal foldmethod=marker
 " 将光标跳转到上次打开当前文件的位置 {{{
