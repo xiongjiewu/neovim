@@ -94,6 +94,7 @@ autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 autocmd FileType php setlocal iskeyword-=$
+" 不全窗口点击回车选择
 inoremap <expr> <CR>       pumvisible()?"\<C-Y>":"\<CR>"
 
 " vim-markdown
