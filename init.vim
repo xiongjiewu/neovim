@@ -3,6 +3,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
+Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
 Plug 'junegunn/fzf'
 Plug 'mileszs/ack.vim'
@@ -78,6 +79,18 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 autocmd BufWritePre * if &filetype != 'markdown' |
 			\ :%s/\s\+$//e |
 			\ endif " }}}
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_html_tidy_exec = 'tidy'
+let g:syntastic_php_checkers = ['php']
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
