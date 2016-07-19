@@ -35,6 +35,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
+
+Plug 'vim-scripts/DoxygenToolkit.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -80,6 +82,7 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 			\ :%s/\s\+$//e |
 			\ endif " }}}
 
+" 语法检测
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -91,6 +94,13 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_html_tidy_exec = 'tidy'
 let g:syntastic_php_checkers = ['php']
+
+" 注释相关
+let g:doxygenToolkit_authorName="xiongjiewu@angejia.com"
+let g:doxygenToolkit_briefTag_funcName="yes"
+map <leader>a :DoxAuthor<CR>
+map <leader>c :Dox<CR>
+map <leader>d :DoxBlock<CR>
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
